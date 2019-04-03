@@ -1,3 +1,4 @@
+///<reference path="../../shared/ingredients.model.ts"/>
 import {Component, ElementRef, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
 import {Ingredient} from '../../shared/ingredients.model';
 
@@ -17,8 +18,8 @@ export class ShoppingEditComponent implements OnInit {
   }
 
    onAddItem() {
-    const ingName = this.nameInputRef.nativeElement.vale;
-    const ingAmount = this.amountInputRef.nativeElement.vale;
+    const ingName = this.nameInputRef.nativeElement.value;
+    const ingAmount = this.amountInputRef.nativeElement.value;
     const newIngredient = new Ingredient(ingName, ingAmount);
     this.ingredientAdded.emit(newIngredient);
   }
